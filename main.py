@@ -45,7 +45,7 @@ while True:
             progress = '抓票的欄位'
             # Check if the desired element is present
             elements = driver.find_elements(By.CSS_SELECTOR, "div.ticket-unit.ng-scope")
-            available_tickets = [e.get_attribute('innerText').split() for e in elements if e.get_attribute('innerText').split()[-1] != '已售完']
+            available_tickets = [e.get_attribute('innerText').split() for e in elements if (e.get_attribute('innerText').split()[-1] != '已售完' and e.get_attribute('innerText').split()[-1] != '暫無票券')]
 
             tickets_str = '\n'.join([' '.join(ticket) for ticket in available_tickets])
             logging.info(f'{title} {available_tickets}')
