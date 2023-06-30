@@ -34,7 +34,7 @@ while True:
         driver.get(url)
 
         # Wait for the page to load
-        wait = WebDriverWait(driver, 0)
+        wait = WebDriverWait(driver, 3)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "body")))
 
         progress = '抓標題'
