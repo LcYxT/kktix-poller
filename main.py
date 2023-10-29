@@ -68,3 +68,4 @@ while True:
         driver.quit()
         # Wait for some time before refreshing the page
         time.sleep(5)
+print("hi")
